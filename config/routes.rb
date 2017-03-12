@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
   post '/sessions', to: 'sessions#create'
+  get '/libraries', to: 'libraries#index'
+  get '/libraries/new', to: 'libraries#new', as: 'new_library'  
+  post '/libraries', to: 'libraries#create'
+  get '/libraries/:id', to: 'libraries#show'
 
 
 

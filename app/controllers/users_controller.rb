@@ -1,15 +1,12 @@
 class UsersController < ApplicationController
 
   before_action :require_login, only: [:show]
-
   
   def index
     @users = User.all
   end
 
   def new
-    # we make a new user
-    # to pass to the form view later
     @user = User.new
   end
 
@@ -23,8 +20,6 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     render :show
   end
-
-
 
 
   private
